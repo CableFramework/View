@@ -28,13 +28,12 @@ class ViewServiceProvider extends ServiceProvider
     public function register()
     {
         $app = $this->getContainer();
-        $app->singleton(View::class, View::class);
 
         // lets save driver
-        $app->singleton('view', function ($app){
+        $app->add('view', function () use ($app){
             $default = $app[Config::class]->get('view.driver', 'blade');
 
-            return $app->driver($default);
+            return $app->resolve(View::class)->driver($default);
         });
     }
 }

@@ -40,7 +40,8 @@ class BladeServiceProvider extends ServiceProvider
             );
         });
 
-        $app->singleton(BladeDriver::class, BladeDriver::class);
-        $app->alias(BladeDriverInterface::class, BladeDriver::class);
+        $app->add('view.blade', BladeDriver::class);
+        $app->alias(BladeDriverInterface::class, 'view.blade');
+        $app->alias(BladeDriver::class, 'view.blade');
     }
 }

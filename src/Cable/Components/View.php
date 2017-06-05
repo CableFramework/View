@@ -2,6 +2,7 @@
 
 namespace Cable\View;
 
+use Cable\Config\Config;
 use Cable\Container\ContainerInterface;
 use Cable\Container\ExpectationException;
 use Cable\Container\NotFoundException;

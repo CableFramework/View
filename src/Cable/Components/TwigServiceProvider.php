@@ -44,7 +44,7 @@ class TwigServiceProvider extends ServiceProvider
 
 
         // save driver
-        $app->singleton('view.twig', function () use ($app){
+        $app->add('view.twig', function () use ($app){
             $twig = $app[TwigDriver::class];
 
             $twig->boot($app[Config::class]->get('view.twig', []));

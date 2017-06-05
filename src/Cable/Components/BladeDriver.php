@@ -69,7 +69,7 @@ class BladeDriver implements DriverInterface
     {
         $this->withArgs($args);
 
-        return $this->blade->make($name, $args, static::$share);
+        return $this->blade->make($name,array_merge($this->args, static::$share));
     }
 
     /**
