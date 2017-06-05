@@ -49,3 +49,7 @@ echo $blade->make('index', array(
               ->make('index.html');
  
  ```
+ 
+ 
+ view: 'app/view'
+ cache: 'storage/cache'
