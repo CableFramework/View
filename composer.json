@@ -1,0 +1,24 @@
+{
+    "name": "cable/cable-view",
+    "description": "View library for cable framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "anonymframework",
+            "email": "vahit.serif119@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cable\\View\\": "src/Cable/Components"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "cable/cable-container": "^1.2",
+        "philo/laravel-blade": "3.*",
+        "twig/twig": "~2.0",
+        "cable/cable-config": "^1.0"
+    }
+}
