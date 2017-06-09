@@ -17,7 +17,7 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->getContainer()
-            ->addProvider(BladeServiceProvider::class);
+            ->addProvider(TwigServiceProvider::class);
     }
 
     /**
@@ -31,7 +31,7 @@ class ViewServiceProvider extends ServiceProvider
 
         // lets save driver
         $app->add('view', function () use ($app){
-            $default = $app[Config::class]->get('view.driver', 'blade');
+            $default = $app[Config::class]->get('view.driver', 'twig');
 
             return $app->resolve(View::class)->driver($default);
         });
