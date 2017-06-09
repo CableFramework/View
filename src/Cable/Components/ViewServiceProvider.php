@@ -4,6 +4,7 @@ namespace Cable\View;
 
 
 use Cable\Config\Config;
+use Cable\Container\ProviderException;
 use Cable\Container\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
@@ -12,6 +13,7 @@ class ViewServiceProvider extends ServiceProvider
     /**
      * register new providers or something
      *
+     * @throws ProviderException
      * @return mixed
      */
     public function boot()
