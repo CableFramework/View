@@ -30,8 +30,8 @@ class BladeServiceProvider extends ServiceProvider
     {
         $app = $this->getContainer();
 
-        $app->singleton(Blade::class, function () use ($app){
-            $config = $app[Config::class];
+        $app->singleton(Blade::class, function (){
+            $config = $this->getContainer()->make(Config::class);
 
 
             return new Blade(

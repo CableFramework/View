@@ -32,10 +32,12 @@ class ViewServiceProvider extends ServiceProvider
         $app = $this->getContainer();
 
         // lets save driver
-        $app->add('view', function () use ($app){
-            $default = $app[Config::class]->get('view.driver', 'blade');
+        $app->add('view', function (){
+            $default = $this->getContainer()
+                ->make(Config::class)
+                ->get('view.driver', 'blade');
 
-            return $app->resolve(View::class)->driver($default);
+            return $this->getContainer()->resolve(View::class)->driver($default);
         });
     }
 }
